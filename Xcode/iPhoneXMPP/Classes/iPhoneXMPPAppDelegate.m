@@ -326,6 +326,8 @@
 
 		return NO;
 	}
+    
+
 
 	return YES;
 }
@@ -508,6 +510,8 @@
 
 	// A simple example of inbound message handling.
 
+        [self sendMessage];
+    
 	if ([message isChatMessageWithBody])
 	{
 		XMPPUserCoreDataStorageObject *user = [xmppRosterStorage userForJID:[message from]
@@ -604,5 +608,19 @@
 	}
 	
 }
+
+- (void)sendMessage
+{
+    NSXMLElement *body =[NSXMLElement elementWithName:@"body"];
+    [body setStringValue:@"TEST"];
+    
+    NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
+    [message addAttributeWithName:@"type" stringValue:@"chat"];
+    [message addAttributeWithName:@"to" stringValue:@"server@ns3.ignored.ch"];
+    [message addChild:body];
+    
+    [[self xmppStream] sendElement:message];
+}
+
 
 @end
