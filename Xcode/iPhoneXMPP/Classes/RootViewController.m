@@ -1,6 +1,7 @@
 #import "RootViewController.h"
 #import "iPhoneXMPPAppDelegate.h"
 #import "SettingsViewController.h"
+#import "ChatViewController.h"
 
 #import "XMPPFramework.h"
 #import "DDLog.h"

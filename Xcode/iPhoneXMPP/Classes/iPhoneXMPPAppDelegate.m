@@ -1,6 +1,7 @@
 #import "iPhoneXMPPAppDelegate.h"
 #import "RootViewController.h"
 #import "SettingsViewController.h"
+#import "ChatViewController.h"
 
 #import "GCDAsyncSocket.h"
 #import "XMPP.h"
@@ -52,6 +53,7 @@
 @synthesize window;
 @synthesize navigationController;
 @synthesize settingsViewController;
+@synthesize chatViewController;
 @synthesize loginButton;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
