@@ -4,6 +4,7 @@
 #import "XMPPFramework.h"
 
 @class SettingsViewController;
+@class ChatViewController;
 
 
 @interface iPhoneXMPPAppDelegate : NSObject <UIApplicationDelegate, XMPPRosterDelegate>
@@ -27,6 +28,8 @@
 	UIWindow *window;
 	UINavigationController *navigationController;
     SettingsViewController *loginViewController;
+    ChatViewController *loginChatViewController;
+    
     UIBarButtonItem *loginButton;
 }
 
@@ -42,6 +45,7 @@
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, strong) IBOutlet SettingsViewController *settingsViewController;
+@property (nonatomic, strong) IBOutlet ChatViewController *chatViewController;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *loginButton;
 
 - (NSManagedObjectContext *)managedObjectContext_roster;
