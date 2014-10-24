@@ -74,7 +74,7 @@
 		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.0 * NSEC_PER_SEC);
 		dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 			
-			[navigationController presentViewController:settingsViewController animated:YES completion:NULL];
+			//[navigationController presentViewController:settingsViewController animated:YES completion:NULL];
 		});
 	}
 		
