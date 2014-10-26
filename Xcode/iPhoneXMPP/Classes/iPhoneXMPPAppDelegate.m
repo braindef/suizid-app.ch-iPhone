@@ -733,12 +733,7 @@ if (![xmppStream isDisconnected]) {
 
 - (IBAction)temp:(id)sender {
     [navigationController presentViewController:chatViewController animated:YES completion:NULL];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error connecting"
-                                                        message:@"See console for error details."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-    [alertView show];
+
 }
 
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="5100" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -9,6 +10,7 @@
             <connections>
                 <outlet property="chatScrollView" destination="7AN-B0-hvq" id="qIc-DI-Nmc"/>
                 <outlet property="chatTextView" destination="Voe-A0-QtK" id="qBX-L9-LbO"/>
+                <outlet property="keyboardHight" destination="XKW-aU-e5J" id="LtC-TN-f6o"/>
                 <outlet property="message" destination="ATs-8J-qDS" id="PJ0-S2-SQB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,8 +26,8 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JbR-u8-3p8">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbR-u8-3p8">
+                    <rect key="frame" x="0.0" y="18" width="320" height="44"/>
                     <items>
                         <navigationItem title="Chat" id="vHJ-4b-5Fn">
                             <barButtonItem key="leftBarButtonItem" title="End" id="rh2-9v-cGW">
@@ -36,13 +38,21 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATs-8J-qDS">
-                    <rect key="frame" x="0.0" y="530" width="244" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATs-8J-qDS">
+                    <rect key="frame" x="0.0" y="531" width="244" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="BbA-BP-Sz9"/>
+                        <constraint firstAttribute="width" constant="244" id="qAc-bg-mLF"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpn-gO-GO7">
-                    <rect key="frame" x="252" y="532" width="68" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpn-gO-GO7">
+                    <rect key="frame" x="252" y="530" width="68" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="T23-aH-4CH"/>
+                        <constraint firstAttribute="width" constant="68" id="mbl-wQ-BAp"/>
+                    </constraints>
                     <state key="normal" title="Send">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -50,20 +60,29 @@
                         <action selector="sendMessage:" destination="-2" eventType="touchUpInside" id="A3v-l2-khF"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Hallo" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-A0-QtK">
-                    <rect key="frame" x="0.0" y="51" width="320" height="465"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Hallo" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-A0-QtK">
+                    <rect key="frame" x="0.0" y="62" width="320" height="460"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="y7V-jy-Bsj"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ATs-8J-qDS" firstAttribute="top" secondItem="Voe-A0-QtK" secondAttribute="bottom" constant="22" id="CNj-7f-17q"/>
-                <constraint firstAttribute="bottom" secondItem="ATs-8J-qDS" secondAttribute="bottom" constant="8" id="gez-6Z-uN1"/>
-                <constraint firstAttribute="bottom" secondItem="wpn-gO-GO7" secondAttribute="bottom" constant="6" id="x2I-zI-TnF"/>
-                <constraint firstItem="Voe-A0-QtK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="51" id="xAB-Nm-aMh"/>
-                <constraint firstItem="wpn-gO-GO7" firstAttribute="top" secondItem="Voe-A0-QtK" secondAttribute="bottom" constant="22" id="z3v-RP-5DD"/>
+                <constraint firstAttribute="bottom" secondItem="wpn-gO-GO7" secondAttribute="bottom" constant="8" id="65G-cN-UV6"/>
+                <constraint firstItem="wpn-gO-GO7" firstAttribute="leading" secondItem="ATs-8J-qDS" secondAttribute="trailing" constant="8" symbolic="YES" id="6bC-po-CxA"/>
+                <constraint firstItem="JbR-u8-3p8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="83l-tu-0vi"/>
+                <constraint firstItem="ATs-8J-qDS" firstAttribute="leading" secondItem="Voe-A0-QtK" secondAttribute="leading" id="8TE-gK-WXk"/>
+                <constraint firstItem="ATs-8J-qDS" firstAttribute="top" secondItem="Voe-A0-QtK" secondAttribute="bottom" constant="9" id="MpJ-PQ-4ys"/>
+                <constraint firstItem="JbR-u8-3p8" firstAttribute="trailing" secondItem="Voe-A0-QtK" secondAttribute="trailing" id="Qx0-dT-lcW"/>
+                <constraint firstItem="ATs-8J-qDS" firstAttribute="leading" secondItem="JbR-u8-3p8" secondAttribute="leading" id="SWm-VC-2ah"/>
+                <constraint firstItem="Voe-A0-QtK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="62" id="Unz-OK-Nfg"/>
+                <constraint firstItem="wpn-gO-GO7" firstAttribute="top" secondItem="Voe-A0-QtK" secondAttribute="bottom" constant="8" id="VOP-M2-TwJ"/>
+                <constraint firstAttribute="bottom" secondItem="ATs-8J-qDS" secondAttribute="bottom" constant="7" id="XKW-aU-e5J"/>
+                <constraint firstItem="ATs-8J-qDS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gwQ-Up-Tcq"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

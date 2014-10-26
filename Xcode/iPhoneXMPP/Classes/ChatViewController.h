@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *chatTextView;
 @property (weak, nonatomic) IBOutlet UIScrollView *chatScrollView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyboardHight;
+
+
 
 - (IBAction)endChat:(id)sender;
 - (IBAction)sendMessage:(id)sender;
