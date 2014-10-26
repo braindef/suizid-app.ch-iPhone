@@ -15,10 +15,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.keyboardHight setConstant:100.0f];
-    [message becomeFirstResponder];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [message becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,18 +45,12 @@
     
     CGFloat height = keyboardFrame.size.height;
     
-    self.keyboardHight.constant = -height;
+    self.	.constant = height;
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"keyboarWillShow"
-                                                        message:@"keyboard will show"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-    [alertView show];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-    self.keyboardHight = 0; 
+    self.keyboardHight.constant = 0;
 }
 
 
@@ -71,6 +66,8 @@
         [Config setIsHelpSeeker:false];
         [Config setHasLogin:false];
         [Config setSupporter:nil];
+        
+        [self.view endEditing:YES];
     }
 }
 
