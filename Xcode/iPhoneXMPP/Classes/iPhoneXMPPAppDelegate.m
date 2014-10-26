@@ -15,6 +15,9 @@
 #import "DDLog.h"
 #import "DDTTYLogger.h"
 
+
+#import "Config.h"
+
 #import <CFNetwork/CFNetwork.h>
 
 // Log levels: off, error, warn, info, verbose
@@ -308,8 +311,10 @@
 	// myPassword = @"";
 	
 	if (myJID == nil || myPassword == nil) {
-		return NO;
-	}
+        myJID=[Config username];
+        myPassword=[Config password];
+
+    }
 
 	[xmppStream setMyJID:[XMPPJID jidWithString:myJID]];
 	password = myPassword;

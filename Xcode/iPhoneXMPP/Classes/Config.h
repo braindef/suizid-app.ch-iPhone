@@ -9,24 +9,31 @@
 #import <Foundation/Foundation.h>
 
 @interface Config : NSObject
+{
+    
+}
 
-+ (NSString *): servername;
-+ (NSString *): serverBotJid;
++ (NSString*)username;
++ (void)setUsername: (NSString*)newUsername;
 
-+ (NSString *): managementUser;
-+ (NSString *): managementPassword;
++ (NSString *)password;
++ (void)setPassword: (NSString*)newPassword;
 
-+ (NSString *): username;
-+ (NSString *): password;
++ (NSString *)managementUser;
++ (void)setManagementUser: (NSString*)newManagementUser;
 
-+ (NSString *): chatPartner;
++ (NSString *)managementPassword;
++ (void)setManagementPassword: (NSString*)newManagementPassword;
 
-+ (NSString *): supporter;
-+ (NSString *): helpSeeker;
++ (NSString *)serverBotJid;
++ (void)setServerBotJid: (NSString*)newServerBotJid;
 
-+ bool: isSupporter;
-+ bool: ishelpSeeker;
++ (BOOL *)isSupporter;
++ (void)setIsSupporter: (BOOL*)newIsSupporter;
 
-+ bool: isAvailable;
-+ bool: isRinging;
++ (BOOL *)isHelpSeeker;
++ (void)setIsHelpSeeker: (BOOL*)newIsHelpSeeker;
+
+
+
 @end
