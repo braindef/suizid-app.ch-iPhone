@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <development version="5100" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -18,16 +18,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PN0-fJ-M6R">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PN0-fJ-M6R">
                     <rect key="frame" x="277" y="570" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <navigationBar contentMode="scaleToFill" id="JbR-u8-3p8">
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JbR-u8-3p8">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <items>
                         <navigationItem title="Chat" id="vHJ-4b-5Fn">
                             <barButtonItem key="leftBarButtonItem" title="End" id="rh2-9v-cGW">
@@ -38,15 +36,13 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ATs-8J-qDS">
-                    <rect key="frame" x="0.0" y="259" width="266" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATs-8J-qDS">
+                    <rect key="frame" x="0.0" y="530" width="244" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wpn-gO-GO7">
-                    <rect key="frame" x="274" y="259" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpn-gO-GO7">
+                    <rect key="frame" x="252" y="532" width="68" height="30"/>
                     <state key="normal" title="Send">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -54,18 +50,24 @@
                         <action selector="sendMessage:" destination="-2" eventType="touchUpInside" id="A3v-l2-khF"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Hallo" selectable="NO" id="Voe-A0-QtK">
-                    <rect key="frame" x="0.0" y="44" width="320" height="207"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Hallo" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-A0-QtK">
+                    <rect key="frame" x="0.0" y="51" width="320" height="465"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ATs-8J-qDS" firstAttribute="top" secondItem="Voe-A0-QtK" secondAttribute="bottom" constant="22" id="CNj-7f-17q"/>
+                <constraint firstAttribute="bottom" secondItem="ATs-8J-qDS" secondAttribute="bottom" constant="8" id="gez-6Z-uN1"/>
+                <constraint firstAttribute="bottom" secondItem="wpn-gO-GO7" secondAttribute="bottom" constant="6" id="x2I-zI-TnF"/>
+                <constraint firstItem="Voe-A0-QtK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="51" id="xAB-Nm-aMh"/>
+                <constraint firstItem="wpn-gO-GO7" firstAttribute="top" secondItem="Voe-A0-QtK" secondAttribute="bottom" constant="22" id="z3v-RP-5DD"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="140" y="155"/>
+            <point key="canvasLocation" x="140" y="172"/>
         </view>
         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="7AN-B0-hvq">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>

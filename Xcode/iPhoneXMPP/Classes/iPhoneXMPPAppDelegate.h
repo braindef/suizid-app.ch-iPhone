@@ -67,6 +67,8 @@
 
 - (IBAction)needHelpChat:(id)sender;
 
+- (IBAction)temp:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *temp2;
 
 @end

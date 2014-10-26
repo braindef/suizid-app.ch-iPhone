@@ -276,7 +276,7 @@ static iPhoneXMPPAppDelegate *sParent;
 	[[self xmppStream] sendElement:presence];
     
     
-    if ([Config isHelpSeeker]&&![Config 	hasLogin]) [self sendLoginRequest];
+    if ([Config isHelpSeeker]&&![Config hasLogin]) [self sendLoginRequest];
     if ([Config hasLogin]) [self sendSupporterRequest];
 
 }
@@ -731,8 +731,16 @@ if (![xmppStream isDisconnected]) {
 
 }
 
-- (IBAction)openChat:(id)sender {
+- (IBAction)temp:(id)sender {
+    [navigationController presentViewController:chatViewController animated:YES completion:NULL];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error connecting"
+                                                        message:@"See console for error details."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+    [alertView show];
 }
+
 
 
 @end
