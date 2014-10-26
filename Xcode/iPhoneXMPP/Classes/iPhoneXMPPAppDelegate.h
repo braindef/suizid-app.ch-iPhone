@@ -62,12 +62,11 @@
 
 - (void)disconnect;
 
-- (void)sendChatMessage;
+- (void)sendChatMessage: (NSString*) text;
 - (void)sendLoginRequest;
 
 - (IBAction)needHelpChat:(id)sender;
 
-- (void)nonsenseMessagebox;
 
 
 @end

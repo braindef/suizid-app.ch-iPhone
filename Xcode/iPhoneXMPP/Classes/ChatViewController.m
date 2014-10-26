@@ -46,8 +46,7 @@
     self.chatTextView.text=[NSString stringWithFormat:@"%@\n%@", self.chatTextView.text, input];
 
     iPhoneXMPPAppDelegate *appDelegate = (iPhoneXMPPAppDelegate *)[[UIApplication sharedApplication]delegate];
-    [appDelegate nonsenseMessagebox];
-    [appDelegate sendChatMessage];
+    [appDelegate sendChatMessage:input];
     
 }
 

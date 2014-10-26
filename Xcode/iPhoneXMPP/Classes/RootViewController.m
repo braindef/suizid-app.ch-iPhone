@@ -55,8 +55,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[[self appDelegate] disconnect];
-	[[[self appDelegate] xmppvCardTempModule] removeDelegate:self];
+	//[[self appDelegate] disconnect];
+	//[[[self appDelegate] xmppvCardTempModule] removeDelegate:self];
 	
 	[super viewWillDisappear:animated];
 }

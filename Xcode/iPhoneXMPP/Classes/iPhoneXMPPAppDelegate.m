@@ -223,6 +223,7 @@ static iPhoneXMPPAppDelegate *sParent;
 
 - (void)teardownStream
 {
+    
 	[xmppStream removeDelegate:self];
 	[xmppRoster removeDelegate:self];
 	
@@ -280,6 +281,7 @@ static iPhoneXMPPAppDelegate *sParent;
 
 - (void)goOffline
 {
+    
 	XMPPPresence *presence = [XMPPPresence presenceWithType:@"unavailable"];
 	
 	[[self xmppStream] sendElement:presence];
@@ -665,14 +667,19 @@ if (![xmppStream isDisconnected]) {
 	
 }
 
-- (void)sendChatMessage
+- (void)sendChatMessage:(NSString*) text
 {
     NSXMLElement *body =[NSXMLElement elementWithName:@"body"];
-    [body setStringValue:@"TEST"];
+    [body setStringValue:text];
+    
+    NSString* chatPartner=nil;
+    
+    if([Config isHelpSeeker]) chatPartner = [Config supporter];
+    else chatPartner = [Config helpSeeker];
     
     NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
     [message addAttributeWithName:@"type" stringValue:@"chat"];
-    [message addAttributeWithName:@"to" stringValue:@"server@ns3.ignored.ch"];
+    [message addAttributeWithName:@"to" stringValue:chatPartner];
     [message addChild:body];
     
     [[self xmppStream] sendElement:message];
@@ -705,15 +712,7 @@ if (![xmppStream isDisconnected]) {
 }
 
 
-- (void)nonsenseMessagebox {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connecting"
-                                                        message:@"nonesnse"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-    
-                                              otherButtonTitles:nil];
-    [alertView show];
-}
+
 
 - (IBAction)needHelpChat:(id)sender {
     [self sendLoginRequest];
