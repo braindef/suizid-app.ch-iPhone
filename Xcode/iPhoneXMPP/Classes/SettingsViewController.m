@@ -65,11 +65,6 @@ NSString *const kXMPPmyPassword = @"kXMPPmyPassword";
   [self done:sender];
 }
 
-- (IBAction)callHelp:(id)sender {
-    UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"HILFEEEE" message:@"Hilfeeee" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    [alert show];
-    
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark Getter/setter methods

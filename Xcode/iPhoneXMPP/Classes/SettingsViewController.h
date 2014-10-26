@@ -24,6 +24,6 @@ extern NSString *const kXMPPmyPassword;
 
 - (IBAction)done:(id)sender;
 - (IBAction)hideKeyboard:(id)sender;
-- (IBAction)callHelp:(id)sender;
+
 
 @end

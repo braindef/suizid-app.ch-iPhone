@@ -625,4 +625,13 @@
 }
 
 
+- (IBAction)needHelpChat:(id)sender {
+    UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"HILFEEEE" message:@"Hilfeeee" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    [alert show];
+    
+    
+    [self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
+}
+
+
 @end

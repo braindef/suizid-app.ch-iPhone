@@ -54,4 +54,7 @@
 - (BOOL)connect;
 - (void)disconnect;
 
+- (IBAction)needHelpChat:(id)sender;
+
+
 @end

@@ -8,7 +8,7 @@
 }
 
 - (IBAction)settings:(id)sender;
-- (IBAction)needhelp:(id)sender;
-- (IBAction)xxxxxxxx:(id)sender;
+
+
 
 @end

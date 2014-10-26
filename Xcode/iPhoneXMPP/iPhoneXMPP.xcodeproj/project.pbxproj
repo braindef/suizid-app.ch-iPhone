@@ -47,6 +47,7 @@
 		494B596319FA621C00B2157E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494B596119FA621C00B2157E /* ChatViewController.m */; };
 		494B596419FA621C00B2157E /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494B596219FA621C00B2157E /* ChatViewController.xib */; };
 		494B596719FA661800B2157E /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494B596619FA661800B2157E /* RootNavigationController.m */; };
+		49A320EE19FC6A1D0077C929 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A320ED19FC6A1D0077C929 /* Config.m */; };
 		631C7B7618E0E7C70015DBDF /* XMPPSCRAMSHA1Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C7B7518E0E7C70015DBDF /* XMPPSCRAMSHA1Authentication.m */; };
 		962031FD1735831C00C43080 /* NSXMLElement+XEP_0203.m in Sources */ = {isa = PBXBuildFile; fileRef = 962031FC1735831C00C43080 /* NSXMLElement+XEP_0203.m */; };
 		DC19DDA1170B4138000D2178 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC19DDA0170B4138000D2178 /* Default-568h@2x.png */; };
@@ -213,6 +214,8 @@
 		494B596219FA621C00B2157E /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		494B596519FA661800B2157E /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
 		494B596619FA661800B2157E /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		49A320EC19FC6A1D0077C929 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		49A320ED19FC6A1D0077C929 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		631C7B7418E0E7C70015DBDF /* XMPPSCRAMSHA1Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPSCRAMSHA1Authentication.h; sourceTree = "<group>"; };
 		631C7B7518E0E7C70015DBDF /* XMPPSCRAMSHA1Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPSCRAMSHA1Authentication.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iPhoneXMPP-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPhoneXMPP-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -564,6 +567,8 @@
 				0704FFC6134794020092A737 /* SettingsViewController.m */,
 				494B596019FA621C00B2157E /* ChatViewController.h */,
 				494B596119FA621C00B2157E /* ChatViewController.m */,
+				49A320EC19FC6A1D0077C929 /* Config.h */,
+				49A320ED19FC6A1D0077C929 /* Config.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1323,6 +1328,7 @@
 				DCB2159C1715ECAF00719845 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				DCB215A71715ECD600719845 /* XMPPRoomHybrid.xcdatamodeld in Sources */,
 				DCB215A81715ECD600719845 /* XMPPRoomHybridStorage.m in Sources */,
+				49A320EE19FC6A1D0077C929 /* Config.m in Sources */,
 				DCB215A91715ECD600719845 /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
 				DCB215AA1715ECD600719845 /* XMPPRoomOccupantHybridMemoryStorageObject.m in Sources */,
 				DCB215AE1715ECF900719845 /* XMPPPubSub.m in Sources */,

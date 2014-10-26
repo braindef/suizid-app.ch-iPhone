@@ -20,6 +20,5 @@
 
 
 
-- (IBAction)needHelpChat:(id)sender;
 
 @end
