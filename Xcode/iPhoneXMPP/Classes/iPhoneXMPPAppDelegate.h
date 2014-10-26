@@ -54,9 +54,20 @@
 - (BOOL)connect;
 - (BOOL)connect: (NSString *)username password:(NSString *) password;
 
+- (void)setupStream;
+- (void)teardownStream;
+
+- (void)goOnline;
+- (void)goOffline;
+
 - (void)disconnect;
 
+- (void)sendChatMessage;
+- (void)sendLoginRequest;
+
 - (IBAction)needHelpChat:(id)sender;
+
+- (void)nonsenseMessagebox;
 
 
 @end

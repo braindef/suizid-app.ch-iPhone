@@ -7,10 +7,7 @@
 //
 
 #import "ChatViewController.h"
-
-@interface ChatViewController ()
-
-@end
+#import "iPhoneXMPPAppDelegate.h"
 
 @implementation ChatViewController
 
@@ -38,15 +35,23 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+
+
 - (IBAction)sendMessage:(id)sender {
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connecting"
-                                                        message:@"sending message"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                              
-                                              otherButtonTitles:nil];
-    [alertView show];}
+    NSString* input = message.text;
+    
+
+
+    self.chatTextView.text=[NSString stringWithFormat:@"%@\n%@", self.chatTextView.text, input];
+
+    iPhoneXMPPAppDelegate *appDelegate = (iPhoneXMPPAppDelegate *)[[UIApplication sharedApplication]delegate];
+    [appDelegate nonsenseMessagebox];
+    [appDelegate sendChatMessage];
+    
+}
+
+
 
 @synthesize message;
 

@@ -27,16 +27,8 @@
   static const int ddLogLevel = LOG_LEVEL_INFO;
 #endif
 
+static iPhoneXMPPAppDelegate *sParent;
 
-@interface iPhoneXMPPAppDelegate()
-
-- (void)setupStream;
-- (void)teardownStream;
-
-- (void)goOnline;
-- (void)goOffline;
-
-@end
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -330,14 +322,6 @@ if (![xmppStream isDisconnected]) {
 	[xmppStream setMyJID:[XMPPJID jidWithString:loginname]];
 	password = loginpass;
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"second"
-                                                            message:loginname
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                  
-                                                  otherButtonTitles:nil];
-        [alertView show];
-        
     }
     else
     {
@@ -544,8 +528,6 @@ if (![xmppStream isDisconnected]) {
 	DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
 
 	// A simple example of inbound message handling.
-
-        [self sendMessage];
     
 	if ([message isChatMessageWithBody])
 	{
@@ -605,13 +587,7 @@ if (![xmppStream isDisconnected]) {
             NSString *supporter = [supporterArray objectAtIndex:0];
             
             [Config setSupporter:supporter];
-            
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:displayName
-                                                                message:[Config supporter]
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil];
-            [alertView show];
+
           
             [self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
             
@@ -689,7 +665,7 @@ if (![xmppStream isDisconnected]) {
 	
 }
 
-- (void)sendMessage
+- (void)sendChatMessage
 {
     NSXMLElement *body =[NSXMLElement elementWithName:@"body"];
     [body setStringValue:@"TEST"];
@@ -729,16 +705,21 @@ if (![xmppStream isDisconnected]) {
 }
 
 
-
-
+- (void)nonsenseMessagebox {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connecting"
+                                                        message:@"nonesnse"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+    
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
 
 - (IBAction)needHelpChat:(id)sender {
-    //UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"HILFEEEE" message:@"Hilfeeee" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    //[alert show];
-    
     [self sendLoginRequest];
-    //[self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
 }
+
+
 
 
 @end

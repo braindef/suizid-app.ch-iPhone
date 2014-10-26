@@ -11,6 +11,7 @@
 @interface ChatViewController : UIViewController
 
 @property (nonatomic,strong) IBOutlet UITextField *message;
+@property (weak, nonatomic) IBOutlet UITextView *chatTextView;
 
 - (IBAction)endChat:(id)sender;
 - (IBAction)sendMessage:(id)sender;
