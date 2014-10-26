@@ -42,14 +42,23 @@
     NSString* input = message.text;
     
 
+    [self appendToTextView:input sender:@"me"];
 
-    self.chatTextView.text=[NSString stringWithFormat:@"%@\n%@", self.chatTextView.text, input];
-
+    
     iPhoneXMPPAppDelegate *appDelegate = (iPhoneXMPPAppDelegate *)[[UIApplication sharedApplication]delegate];
     [appDelegate sendChatMessage:input];
     
 }
 
+
+- (void) appendToTextView:(NSString*)text sender:(NSString*)sender
+{
+    self.chatTextView.text=[NSString stringWithFormat:@"%@\n%@: %@", self.chatTextView.text, sender, text];
+    
+    //working with scroll
+    NSRange range = NSMakeRange(self.chatTextView.text.length -1, 1);
+    [self.chatTextView scrollRangeToVisible:range];
+}
 
 
 @synthesize message;

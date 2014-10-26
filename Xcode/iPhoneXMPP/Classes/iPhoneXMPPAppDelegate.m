@@ -542,12 +542,12 @@ if (![xmppStream isDisconnected]) {
 
 		if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive)
 		{
-			UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:displayName
+			/*UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:displayName
 															  message:body 
 															 delegate:nil 
 													cancelButtonTitle:@"Ok" 
 													otherButtonTitles:nil];
-			[alertView show];
+			[alertView show];*/
 		}
 		else
 		{
@@ -596,6 +596,16 @@ if (![xmppStream isDisconnected]) {
             return;
             
         }
+        
+        NSString *partner = [message fromStr];
+        NSArray *jidComponents = [partner componentsSeparatedByString:@"@"];
+        NSString *partnerShort = [jidComponents objectAtIndex:0];
+        
+        [chatViewController appendToTextView:body sender:partnerShort];
+        
+        //chatViewController.chatTextView.text=[NSString stringWithFormat:@"%@\n%@: %@", chatViewController.chatTextView.text, partnerShort, body];
+        
+
         
 	}
 }

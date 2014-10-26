@@ -12,8 +12,11 @@
 
 @property (nonatomic,strong) IBOutlet UITextField *message;
 @property (weak, nonatomic) IBOutlet UITextView *chatTextView;
+@property (weak, nonatomic) IBOutlet UIScrollView *chatScrollView;
+
 
 - (IBAction)endChat:(id)sender;
 - (IBAction)sendMessage:(id)sender;
+- (void) appendToTextView:(NSString*)text sender:(NSString*)sender;
 
 @end
