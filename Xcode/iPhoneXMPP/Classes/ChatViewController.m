@@ -45,7 +45,7 @@
     
     CGFloat height = keyboardFrame.size.height;
     
-    self.	.constant = height;
+    self.keyboardHight.constant = height;
     
 }
 
