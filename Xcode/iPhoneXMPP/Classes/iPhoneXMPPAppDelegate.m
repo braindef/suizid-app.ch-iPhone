@@ -310,12 +310,21 @@
 	// myJID = @"user@gmail.com/xmppframework";
 	// myPassword = @"";
 	
-	if (myJID == nil || myPassword == nil) {
-        myJID=[Config username];
-        myPassword=[Config password];
+    if (myJID == nil || myPassword == nil || [myJID isEqualToString:@""] ) {
+        myJID=[Config managementUser];
+        myPassword=[Config managementPassword];
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connecting"
+                                                            message:myJID
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
 
+                                                  otherButtonTitles:nil];
+    		[alertView show];
     }
 
+
+    
 	[xmppStream setMyJID:[XMPPJID jidWithString:myJID]];
 	password = myPassword;
 
@@ -629,13 +638,29 @@
     [[self xmppStream] sendElement:message];
 }
 
+- (void)sendLoginRequest
+{
+    NSXMLElement *body =[NSXMLElement elementWithName:@"body"];
+    [body setStringValue:@"SuicidePreventionAppServerLoginRequest"];
+    
+    NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
+    [message addAttributeWithName:@"type" stringValue:@"chat"];
+    [message addAttributeWithName:@"to" stringValue:[Config serverBotJid]];
+    [message addChild:body];
+    
+    [[self xmppStream] sendElement:message];
+}
+
+
+
+
 
 - (IBAction)needHelpChat:(id)sender {
-    UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"HILFEEEE" message:@"Hilfeeee" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    [alert show];
+    //UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"HILFEEEE" message:@"Hilfeeee" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    //[alert show];
     
-    
-    [self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
+    [self sendLoginRequest];
+    //[self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
 }
 
 
