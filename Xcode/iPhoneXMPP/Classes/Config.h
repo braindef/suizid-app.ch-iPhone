@@ -43,6 +43,8 @@
 + (BOOL *)isHelpSeeker;
 + (void)setIsHelpSeeker: (BOOL*)newIsHelpSeeker;
 
++ (BOOL *)hasLogin;
++ (void)setHasLogin: (BOOL*)newHasLogin;
 
 
 @end

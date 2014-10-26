@@ -8,12 +8,14 @@
 
 #import "ChatViewController.h"
 #import "iPhoneXMPPAppDelegate.h"
+#import "Config.h"
 
 @implementation ChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [message becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,31 +35,42 @@
 
 - (IBAction)endChat:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
+    if([Config isHelpSeeker])
+    {
+        iPhoneXMPPAppDelegate *appDelegate = (iPhoneXMPPAppDelegate *)[[UIApplication sharedApplication]delegate];
+        [appDelegate disconnect];
+        
+        [Config setIsHelpSeeker:false];
+        [Config setHasLogin:false];
+        [Config setSupporter:nil];
+    }
 }
-
 
 
 - (IBAction)sendMessage:(id)sender {
     
     NSString* input = message.text;
-    
-
     [self appendToTextView:input sender:@"me"];
-
     
+    [message setText:@""];
+    
+    //send message to the xmpp service
     iPhoneXMPPAppDelegate *appDelegate = (iPhoneXMPPAppDelegate *)[[UIApplication sharedApplication]delegate];
     [appDelegate sendChatMessage:input];
-    
 }
 
 
 - (void) appendToTextView:(NSString*)text sender:(NSString*)sender
 {
+    //append
     self.chatTextView.text=[NSString stringWithFormat:@"%@\n%@: %@", self.chatTextView.text, sender, text];
     
-    //working with scroll
+    //scroll
     NSRange range = NSMakeRange(self.chatTextView.text.length -1, 1);
     [self.chatTextView scrollRangeToVisible:range];
+}
+
+- (IBAction)temp:(id)sender {
 }
 
 

@@ -275,7 +275,9 @@ static iPhoneXMPPAppDelegate *sParent;
 	
 	[[self xmppStream] sendElement:presence];
     
-    if ([Config isHelpSeeker]) [self sendSupporterRequest];
+    
+    if ([Config isHelpSeeker]&&![Config 	hasLogin]) [self sendLoginRequest];
+    if ([Config hasLogin]) [self sendSupporterRequest];
 
 }
 
@@ -293,7 +295,9 @@ static iPhoneXMPPAppDelegate *sParent;
 
 - (BOOL)connect
 {
+    if([Config isHelpSeeker]||[Config isSupporter])
     return [self connect:nil password:nil];
+    else return false;
 }
 
 - (BOOL)connect: (NSString *)loginname password:(NSString *)loginpass
@@ -567,14 +571,12 @@ if (![xmppStream isDisconnected]) {
             
             [self disconnect];
             
+            [Config setHasLogin:true];
+            
             NSString *fullloginname = [NSString stringWithFormat:@"%@@%@", loginuser, [Config servername]];
             
             //Reconnect with anonymous logindata
             [self connect:fullloginname password:loginPassword];
-            
-            //request Supporter
-            
-            [Config setIsHelpSeeker:true];
             
             return;
             
@@ -602,9 +604,6 @@ if (![xmppStream isDisconnected]) {
         NSString *partnerShort = [jidComponents objectAtIndex:0];
         
         [chatViewController appendToTextView:body sender:partnerShort];
-        
-        //chatViewController.chatTextView.text=[NSString stringWithFormat:@"%@\n%@: %@", chatViewController.chatTextView.text, partnerShort, body];
-        
 
         
 	}
@@ -725,10 +724,15 @@ if (![xmppStream isDisconnected]) {
 
 
 - (IBAction)needHelpChat:(id)sender {
+    [Config setIsHelpSeeker:true];
+    [self connect];
     [self sendLoginRequest];
+    
+
 }
 
-
+- (IBAction)openChat:(id)sender {
+}
 
 
 @end
