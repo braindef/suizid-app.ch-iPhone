@@ -52,6 +52,8 @@
 - (NSManagedObjectContext *)managedObjectContext_capabilities;
 
 - (BOOL)connect;
+- (BOOL)connect: (NSString *)username password:(NSString *) password;
+
 - (void)disconnect;
 
 - (IBAction)needHelpChat:(id)sender;

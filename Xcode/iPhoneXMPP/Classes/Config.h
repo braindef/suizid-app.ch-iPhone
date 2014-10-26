@@ -13,6 +13,9 @@
     
 }
 
++ (NSString*)servername;
++ (void)setServername: (NSString*)newServername;
+
 + (NSString*)username;
 + (void)setUsername: (NSString*)newUsername;
 
@@ -27,6 +30,12 @@
 
 + (NSString *)serverBotJid;
 + (void)setServerBotJid: (NSString*)newServerBotJid;
+
++ (NSString *)supporter;
++ (void)setSupporter: (NSString*)newSupporter;
+
++ (NSString *)helpSeeker;
++ (void)setHelpSeeker: (NSString*)newHelpSeeker;
 
 + (BOOL *)isSupporter;
 + (void)setIsSupporter: (BOOL*)newIsSupporter;

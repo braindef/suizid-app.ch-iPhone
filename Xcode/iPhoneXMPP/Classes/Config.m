@@ -13,6 +13,8 @@
 
 }
 
+static NSString *servername=@"ns3.ignored.ch";
+
 static NSString *username=nil;
 static NSString *password=nil;
 
@@ -21,9 +23,15 @@ static NSString *managementPassword=@"password";
 
 static NSString *serverBotJid=@"server@ns3.ignored.ch";
 
+static NSString *supporter = nil;
+static NSString *helpSeeker = nil;
+
 static bool *isSupporter=false;
 static bool *isHelpSeeker=false;
 
+
++ (NSString*)servername { return servername; }
++ (void)setServername: (NSString*)newServername { servername = newServername; }
 
 + (NSString*)username { return username; }
 + (void)setUsername: (NSString*)newUsername { username = newUsername; }
@@ -39,6 +47,12 @@ static bool *isHelpSeeker=false;
 
 + (NSString *)serverBotJid { return serverBotJid; }
 + (void)setServerBotJid: (NSString*)newServerBotJid { serverBotJid = newServerBotJid; }
+
++ (NSString *)supporter { return supporter; }
++ (void)setSupporter: (NSString*)newSupporter { supporter = newSupporter; }
+
++ (NSString *)helpSeeker { return helpSeeker; }
++ (void)setHelpSeeker: (NSString*)newHelpSeeker { helpSeeker = newHelpSeeker; }
 
 + (BOOL *)isSupporter {return isSupporter; }
 + (void)setIsSupporter: (BOOL*)newIsSupporter { isSupporter = newIsSupporter; }

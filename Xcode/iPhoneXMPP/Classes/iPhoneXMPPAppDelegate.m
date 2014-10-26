@@ -281,6 +281,9 @@
     }
 	
 	[[self xmppStream] sendElement:presence];
+    
+    if ([Config isHelpSeeker]) [self sendSupporterRequest];
+
 }
 
 - (void)goOffline
@@ -296,7 +299,12 @@
 
 - (BOOL)connect
 {
-	if (![xmppStream isDisconnected]) {
+    return [self connect:nil password:nil];
+}
+
+- (BOOL)connect: (NSString *)loginname password:(NSString *)loginpass
+{
+if (![xmppStream isDisconnected]) {
 		return YES;
 	}
 
@@ -313,21 +321,32 @@
     if (myJID == nil || myPassword == nil || [myJID isEqualToString:@""] ) {
         myJID=[Config managementUser];
         myPassword=[Config managementPassword];
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connecting"
-                                                            message:myJID
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
 
-                                                  otherButtonTitles:nil];
-    		[alertView show];
     }
 
 
+    if(loginname != nil)
+    {
+	[xmppStream setMyJID:[XMPPJID jidWithString:loginname]];
+	password = loginpass;
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"second"
+                                                            message:loginname
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                  
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        
+    }
+    else
+    {
+        [xmppStream setMyJID:[XMPPJID jidWithString:myJID]];
+        password = myPassword;
+    }
     
-	[xmppStream setMyJID:[XMPPJID jidWithString:myJID]];
-	password = myPassword;
-
+        
+        
 	NSError *error = nil;
 	if (![xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error])
 	{
@@ -555,6 +574,51 @@
 
 			[[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
 		}
+        
+        if([body hasPrefix:@"SuicidePreventionAppServerLoginRequestAnswer"])
+        {
+            NSArray *logindata = [body componentsSeparatedByString:@";"];
+            NSString *loginuser = [logindata objectAtIndex:1];
+            NSString *loginPassword = [logindata objectAtIndex:2];
+            
+            [self disconnect];
+            
+            NSString *fullloginname = [NSString stringWithFormat:@"%@@%@", loginuser, [Config servername]];
+            
+            //Reconnect with anonymous logindata
+            [self connect:fullloginname password:loginPassword];
+            
+            //request Supporter
+            
+            [Config setIsHelpSeeker:true];
+            
+            return;
+            
+        }
+        
+        if([body hasPrefix:@"SuicidePreventionAppServerSupporterRequestCallingAccept;"])
+        {
+            NSArray *logindata = [body componentsSeparatedByString:@";"];
+            NSString *supporterString = [logindata objectAtIndex:1];
+            
+            NSArray *supporterArray = [supporterString componentsSeparatedByString:@"/"];
+            NSString *supporter = [supporterArray objectAtIndex:0];
+            
+            [Config setSupporter:supporter];
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:displayName
+                                                                message:[Config supporter]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+          
+            [self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
+            
+            return;
+            
+        }
+        
 	}
 }
 
@@ -642,6 +706,19 @@
 {
     NSXMLElement *body =[NSXMLElement elementWithName:@"body"];
     [body setStringValue:@"SuicidePreventionAppServerLoginRequest"];
+    
+    NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
+    [message addAttributeWithName:@"type" stringValue:@"chat"];
+    [message addAttributeWithName:@"to" stringValue:[Config serverBotJid]];
+    [message addChild:body];
+    
+    [[self xmppStream] sendElement:message];
+}
+
+- (void)sendSupporterRequest
+{
+    NSXMLElement *body =[NSXMLElement elementWithName:@"body"];
+    [body setStringValue:@"SuicidePreventionAppServerSupporterRequest"];
     
     NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
     [message addAttributeWithName:@"type" stringValue:@"chat"];

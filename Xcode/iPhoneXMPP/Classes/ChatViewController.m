@@ -34,4 +34,20 @@
 }
 */
 
+- (IBAction)endChat:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (IBAction)sendMessage:(id)sender {
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connecting"
+                                                        message:@"sending message"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                              
+                                              otherButtonTitles:nil];
+    [alertView show];}
+
+@synthesize message;
+
 @end

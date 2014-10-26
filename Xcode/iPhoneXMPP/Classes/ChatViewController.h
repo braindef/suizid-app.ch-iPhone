@@ -10,6 +10,9 @@
 
 @interface ChatViewController : UIViewController
 
+@property (nonatomic,strong) IBOutlet UITextField *message;
+
 - (IBAction)endChat:(id)sender;
+- (IBAction)sendMessage:(id)sender;
 
 @end
