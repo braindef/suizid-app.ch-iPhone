@@ -2,6 +2,7 @@
 #import "RootViewController.h"
 #import "SettingsViewController.h"
 #import "ChatViewController.h"
+#import "CallViewController.h"
 
 #import "GCDAsyncSocket.h"
 #import "XMPP.h"
@@ -12,6 +13,7 @@
 #import "XMPPvCardAvatarModule.h"
 #import "XMPPvCardCoreDataStorage.h"
 
+#import <AudioToolbox/AudioServices.h>
 #import "DDLog.h"
 #import "DDTTYLogger.h"
 
@@ -278,6 +280,8 @@ static iPhoneXMPPAppDelegate *sParent;
     
     if ([Config isHelpSeeker]&&![Config hasLogin]) [self sendLoginRequest];
     if ([Config hasLogin]) [self sendSupporterRequest];
+    
+    if ([Config isSupporter]) [self supporterLogin];
 
 }
 
@@ -295,13 +299,13 @@ static iPhoneXMPPAppDelegate *sParent;
 
 - (BOOL)connect
 {
-    if([Config isHelpSeeker]||[Config isSupporter])
+    
     return [self connect:nil password:nil];
-    else return false;
 }
 
 - (BOOL)connect: (NSString *)loginname password:(NSString *)loginpass
 {
+
 if (![xmppStream isDisconnected]) {
 		return YES;
 	}
@@ -321,8 +325,13 @@ if (![xmppStream isDisconnected]) {
         myPassword=[Config managementPassword];
 
     }
+    else
+    {
+        [Config setIsSupporter:true];
+    }
 
-
+    if(!([Config isHelpSeeker]||[Config isSupporter])) return false;
+    
     if(loginname != nil)
     {
 	[xmppStream setMyJID:[XMPPJID jidWithString:loginname]];
@@ -546,12 +555,12 @@ if (![xmppStream isDisconnected]) {
 
 		if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive)
 		{
-			/*UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:displayName
+			UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:displayName
 															  message:body 
 															 delegate:nil 
 													cancelButtonTitle:@"Ok" 
 													otherButtonTitles:nil];
-			[alertView show];*/
+			[alertView show];
 		}
 		else
 		{
@@ -584,20 +593,53 @@ if (![xmppStream isDisconnected]) {
         
         if([body hasPrefix:@"SuicidePreventionAppServerSupporterRequestCallingAccept;"])
         {
-            NSArray *logindata = [body componentsSeparatedByString:@";"];
-            NSString *supporterString = [logindata objectAtIndex:1];
+            NSArray *mesg = [body componentsSeparatedByString:@";"];
+            NSString *supporterString = [mesg objectAtIndex:1];
             
             NSArray *supporterArray = [supporterString componentsSeparatedByString:@"/"];
             NSString *supporter = [supporterArray objectAtIndex:0];
             
             [Config setSupporter:supporter];
-
-          
+            
+            
             [self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
             
             return;
             
         }
+        
+        if([body hasPrefix:@"SuicidePreventionAppServerSupporterLoggedInAck"])
+        {
+
+            [[UIApplication sharedApplication] performSelector:@selector(suspend)];
+            
+            return;
+            
+        }
+        
+        
+        if([body hasPrefix:@"SuicidePreventionAppServerSupporterRequestCalling;"])
+        {
+
+            NSArray *mesg = [body componentsSeparatedByString:@";"];
+            NSString *helpSeekerString = [mesg objectAtIndex:1];
+            
+            NSArray *helpSeekerArray = [helpSeekerString componentsSeparatedByString:@"/"];
+            NSString *helpSeeker = [helpSeekerArray objectAtIndex:0];
+            
+            [Config setHelpSeeker:helpSeeker];
+            
+            [self.navigationController presentViewController:self.callViewController animated:YES completion:NULL];
+            
+            NSString *path = [[NSBundle bundleWithIdentifier:@"com.apple.UIKit"] pathForResource:@"Tock" ofType:@"aiff"];
+            SystemSoundID soundID;
+            AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &soundID);
+            AudioServicesPlaySystemSound(soundID);
+            AudioServicesDisposeSystemSoundID(soundID);
+            return;
+            
+        }
+        
         
         NSString *partner = [message fromStr];
         NSArray *jidComponents = [partner componentsSeparatedByString:@"@"];
@@ -720,7 +762,52 @@ if (![xmppStream isDisconnected]) {
     [[self xmppStream] sendElement:message];
 }
 
+- (void)supporterLogin
+{
+    NSXMLElement *body =[NSXMLElement elementWithName:@"body"];
+    [body setStringValue:@"SuicidePreventionAppServerSupporterLoggedIn"];
+    
+    NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
+    [message addAttributeWithName:@"type" stringValue:@"chat"];
+    [message addAttributeWithName:@"to" stringValue:[Config serverBotJid]];
+    [message addChild:body];
+    
+    [[self xmppStream] sendElement:message];
+}
 
+- (void)sendDecline
+{
+    NSXMLElement *body =[NSXMLElement elementWithName:@"body"];
+    
+    NSString *declineMessage = [NSString stringWithFormat:@"SuicidePreventionAppServerSupporterRequestCallingDecline;%@", [Config helpSeeker]];
+    
+    [body setStringValue:declineMessage];
+    
+    NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
+    [message addAttributeWithName:@"type" stringValue:@"chat"];
+    [message addAttributeWithName:@"to" stringValue:[Config serverBotJid]];
+    [message addChild:body];
+    
+    [[self xmppStream] sendElement:message];
+}
+
+- (void)sendAccept
+{
+    NSXMLElement *body =[NSXMLElement elementWithName:@"body"];
+    
+    NSString *acceptMessage = [NSString stringWithFormat:@"SuicidePreventionAppServerSupporterRequestCallingAccept;%@", [Config helpSeeker]];
+    
+    [body setStringValue:acceptMessage];
+    
+    NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
+    [message addAttributeWithName:@"type" stringValue:@"chat"];
+    [message addAttributeWithName:@"to" stringValue:[Config serverBotJid]];
+    [message addChild:body];
+    
+    [[self xmppStream] sendElement:message];
+    
+    [self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
+}
 
 
 - (IBAction)needHelpChat:(id)sender {

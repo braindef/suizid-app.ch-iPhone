@@ -63,6 +63,7 @@
         iPhoneXMPPAppDelegate *appDelegate = (iPhoneXMPPAppDelegate *)[[UIApplication sharedApplication]delegate];
         [appDelegate disconnect];
         
+        
         [Config setIsHelpSeeker:false];
         [Config setHasLogin:false];
         [Config setSupporter:nil];

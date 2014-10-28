@@ -44,6 +44,9 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		490F24AE19FA071000D98B59 /* polar_bear_help_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 490F24AD19FA071000D98B59 /* polar_bear_help_full.png */; };
+		491EE82A19FF359D00DB1C3E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491EE82919FF359D00DB1C3E /* AudioToolbox.framework */; };
+		491EE82E19FF386B00DB1C3E /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491EE82C19FF386B00DB1C3E /* CallViewController.m */; };
+		491EE82F19FF386B00DB1C3E /* CallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491EE82D19FF386B00DB1C3E /* CallViewController.xib */; };
 		494B596319FA621C00B2157E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494B596119FA621C00B2157E /* ChatViewController.m */; };
 		494B596419FA621C00B2157E /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494B596219FA621C00B2157E /* ChatViewController.xib */; };
 		494B596719FA661800B2157E /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494B596619FA661800B2157E /* RootNavigationController.m */; };
@@ -209,6 +212,10 @@
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RootViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		490F24AD19FA071000D98B59 /* polar_bear_help_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full.png; sourceTree = "<group>"; };
+		491EE82919FF359D00DB1C3E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		491EE82B19FF386B00DB1C3E /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
+		491EE82C19FF386B00DB1C3E /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
+		491EE82D19FF386B00DB1C3E /* CallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallViewController.xib; sourceTree = "<group>"; };
 		494B596019FA621C00B2157E /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		494B596119FA621C00B2157E /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		494B596219FA621C00B2157E /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
@@ -411,6 +418,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491EE82A19FF359D00DB1C3E /* AudioToolbox.framework in Frameworks */,
 				DC26A52D152A3E82004B71C0 /* Security.framework in Frameworks */,
 				070400B91347D09A0092A737 /* CoreLocation.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -557,6 +565,7 @@
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				0704FFC7134794020092A737 /* SettingsViewController.xib */,
 				494B596219FA621C00B2157E /* ChatViewController.xib */,
+				491EE82D19FF386B00DB1C3E /* CallViewController.xib */,
 				494B596519FA661800B2157E /* RootNavigationController.h */,
 				494B596619FA661800B2157E /* RootNavigationController.m */,
 				1D3623240D0F684500981E51 /* iPhoneXMPPAppDelegate.h */,
@@ -569,6 +578,8 @@
 				494B596119FA621C00B2157E /* ChatViewController.m */,
 				49A320EC19FC6A1D0077C929 /* Config.h */,
 				49A320ED19FC6A1D0077C929 /* Config.m */,
+				491EE82B19FF386B00DB1C3E /* CallViewController.h */,
+				491EE82C19FF386B00DB1C3E /* CallViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -617,6 +628,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				491EE82919FF359D00DB1C3E /* AudioToolbox.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -1222,6 +1234,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				0704FFC9134794020092A737 /* SettingsViewController.xib in Resources */,
+				491EE82F19FF386B00DB1C3E /* CallViewController.xib in Resources */,
 				494B596419FA621C00B2157E /* ChatViewController.xib in Resources */,
 				070400451347CB140092A737 /* defaultPerson.png in Resources */,
 				DC90AC6D147C28850022DF52 /* README.txt in Resources */,
@@ -1332,6 +1345,7 @@
 				DCB215A91715ECD600719845 /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
 				DCB215AA1715ECD600719845 /* XMPPRoomOccupantHybridMemoryStorageObject.m in Sources */,
 				DCB215AE1715ECF900719845 /* XMPPPubSub.m in Sources */,
+				491EE82E19FF386B00DB1C3E /* CallViewController.m in Sources */,
 				DCB215B21715ED4900719845 /* TURNSocket.m in Sources */,
 				DCB215B61715ED6000719845 /* XMPPMessage+XEP_0085.m in Sources */,
 				DCB215BA1715ED7000719845 /* XMPPTransports.m in Sources */,

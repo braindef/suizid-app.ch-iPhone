@@ -5,6 +5,7 @@
 
 @class SettingsViewController;
 @class ChatViewController;
+@class CallViewController;
 
 
 @interface iPhoneXMPPAppDelegate : NSObject <UIApplicationDelegate, XMPPRosterDelegate>
@@ -29,6 +30,7 @@
 	UINavigationController *navigationController;
     SettingsViewController *loginViewController;
     ChatViewController *loginChatViewController;
+    CallViewController *loginCallViewController;
     
     UIBarButtonItem *loginButton;
 }
@@ -46,6 +48,7 @@
 @property (nonatomic, strong) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, strong) IBOutlet SettingsViewController *settingsViewController;
 @property (nonatomic, strong) IBOutlet ChatViewController *chatViewController;
+@property (nonatomic, strong) IBOutlet CallViewController *callViewController;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *loginButton;
 
 - (NSManagedObjectContext *)managedObjectContext_roster;
@@ -64,6 +67,9 @@
 
 - (void)sendChatMessage: (NSString*) text;
 - (void)sendLoginRequest;
+
+- (void)sendDecline;
+- (void)sendAccept;
 
 - (IBAction)needHelpChat:(id)sender;
 

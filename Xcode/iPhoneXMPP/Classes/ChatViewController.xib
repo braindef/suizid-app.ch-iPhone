@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController">
             <connections>
-                <outlet property="chatScrollView" destination="7AN-B0-hvq" id="qIc-DI-Nmc"/>
                 <outlet property="chatTextView" destination="Voe-A0-QtK" id="qBX-L9-LbO"/>
                 <outlet property="keyboardHight" destination="JcL-rb-gr5" id="sU7-dL-F8l"/>
                 <outlet property="message" destination="ATs-8J-qDS" id="PJ0-S2-SQB"/>
@@ -88,13 +87,6 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="140" y="172"/>
         </view>
-        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="7AN-B0-hvq">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="-228" y="102"/>
-        </scrollView>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

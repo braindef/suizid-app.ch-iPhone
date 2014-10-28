@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "iPhoneXMPPAppDelegate.h"
 
 
 NSString *const kXMPPmyJID = @"kXMPPmyJID";
@@ -58,6 +59,8 @@ NSString *const kXMPPmyPassword = @"kXMPPmyPassword";
   [self setField:passwordField forKey:kXMPPmyPassword];
 
   [self dismissViewControllerAnimated:YES completion:NULL];
+  
+
 }
 
 - (IBAction)hideKeyboard:(id)sender {
