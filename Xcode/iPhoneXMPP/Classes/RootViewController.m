@@ -2,6 +2,7 @@
 #import "iPhoneXMPPAppDelegate.h"
 #import "SettingsViewController.h"
 #import "ChatViewController.h"
+#import "Config.h"
 
 #import "XMPPFramework.h"
 #import "DDLog.h"
@@ -51,6 +52,9 @@
 	[titleLabel sizeToFit];
 
 	self.navigationItem.titleView = titleLabel;
+
+
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -58,7 +62,13 @@
 	//[[self appDelegate] disconnect];
 	//[[[self appDelegate] xmppvCardTempModule] removeDelegate:self];
 	
-	[super viewWillDisappear:animated];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Root View Controller"
+                                                        message:@"disappeared"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alertView show];
+    [super viewWillDisappear:animated];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

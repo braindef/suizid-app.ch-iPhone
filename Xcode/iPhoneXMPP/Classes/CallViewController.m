@@ -7,6 +7,7 @@
 //
 
 #import "CallViewController.h"
+#import "ChatViewController.h"
 #import "iPhoneXMPPAppDelegate.h"
 
 @interface CallViewController ()
@@ -38,9 +39,15 @@
 - (IBAction)decline:(id)sender {
     iPhoneXMPPAppDelegate *appDelegate = (iPhoneXMPPAppDelegate *)[[UIApplication sharedApplication]delegate];
     [appDelegate sendDecline];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)accept:(id)sender {
     iPhoneXMPPAppDelegate *appDelegate = (iPhoneXMPPAppDelegate *)[[UIApplication sharedApplication]delegate];
-    [appDelegate sendAccept];}
+    [appDelegate sendAccept];
+    //[self dismissViewControllerAnimated:YES completion:NULL];
+    
+    
+    [[self navigationController]pushViewController:[appDelegate chatViewController]	 animated:true];
+}
 @end

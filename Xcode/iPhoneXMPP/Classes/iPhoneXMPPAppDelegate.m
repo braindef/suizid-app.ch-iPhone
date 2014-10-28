@@ -299,7 +299,7 @@ static iPhoneXMPPAppDelegate *sParent;
 
 - (BOOL)connect
 {
-    
+
     return [self connect:nil password:nil];
 }
 
@@ -555,12 +555,12 @@ if (![xmppStream isDisconnected]) {
 
 		if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive)
 		{
-			UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:displayName
+			/*UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:displayName
 															  message:body 
 															 delegate:nil 
 													cancelButtonTitle:@"Ok" 
 													otherButtonTitles:nil];
-			[alertView show];
+			[alertView show];*/
 		}
 		else
 		{
@@ -601,8 +601,7 @@ if (![xmppStream isDisconnected]) {
             
             [Config setSupporter:supporter];
             
-            
-            [self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
+            [navigationController presentViewController:chatViewController animated:YES completion:NULL];
             
             return;
             
@@ -628,6 +627,7 @@ if (![xmppStream isDisconnected]) {
             NSString *helpSeeker = [helpSeekerArray objectAtIndex:0];
             
             [Config setHelpSeeker:helpSeeker];
+            
             
             [self.navigationController presentViewController:self.callViewController animated:YES completion:NULL];
             
@@ -806,7 +806,8 @@ if (![xmppStream isDisconnected]) {
     
     [[self xmppStream] sendElement:message];
     
-    [self.navigationController presentViewController:self.chatViewController animated:YES completion:NULL];
+    [navigationController presentViewController:chatViewController animated:YES completion:NULL];
+
 }
 
 
