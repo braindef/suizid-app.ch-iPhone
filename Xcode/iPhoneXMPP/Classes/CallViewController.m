@@ -49,7 +49,8 @@
     
     
     
-    ChatViewController *cvc = [[ChatViewController alloc]init];
+    //ChatViewController *cvc = [[ChatViewController alloc]init];
+    ChatViewController *cvc = appDelegate.chatViewController;
     
     [[appDelegate navigationController]pushViewController:cvc animated:true ];
 }
