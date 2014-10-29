@@ -45,9 +45,12 @@
 - (IBAction)accept:(id)sender {
     iPhoneXMPPAppDelegate *appDelegate = (iPhoneXMPPAppDelegate *)[[UIApplication sharedApplication]delegate];
     [appDelegate sendAccept];
-    //[self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:NULL];
     
     
-    [[self navigationController]pushViewController:[appDelegate chatViewController]	 animated:true];
+    
+    ChatViewController *cvc = [[ChatViewController alloc]init];
+    
+    [[appDelegate navigationController]pushViewController:cvc animated:true ];
 }
 @end
