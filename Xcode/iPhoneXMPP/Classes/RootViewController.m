@@ -59,15 +59,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	//[[self appDelegate] disconnect];
-	//[[[self appDelegate] xmppvCardTempModule] removeDelegate:self];
-	
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Root View Controller"
-                                                        message:@"disappeared"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-        [alertView show];
+
     [super viewWillDisappear:animated];
 }
 

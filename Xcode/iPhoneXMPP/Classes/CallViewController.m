@@ -22,11 +22,11 @@
     // Do any additional setup after loading the view from its nib.
     
     //working
-    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ino" ofType:@"wav"]];
+    //NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ino" ofType:@"wav"]];
 
-    SystemSoundID mRing;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &mRing);
-    AudioServicesPlaySystemSound(mRing);
+    //SystemSoundID mRing;
+    //AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &mRing);
+    //AudioServicesPlaySystemSound(mRing);
     
     //only working when not in background :(
     //NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ringtone" ofType:@"mp3"]];

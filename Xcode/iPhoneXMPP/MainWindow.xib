@@ -99,7 +99,7 @@
 					<object class="IBUIViewController" id="619226028">
 						<string key="IBUITitle">Roster</string>
 						<object class="IBUIView" key="IBUIView" id="938794544">
-							<reference key="NSNextResponder"/>
+							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">274</int>
 							<array class="NSMutableArray" key="NSSubviews">
 								<object class="IBUILabel" id="309867186">
@@ -107,7 +107,6 @@
 									<int key="NSvFlags">292</int>
 									<string key="NSFrame">{{16, 28}, {288, 38}}</string>
 									<reference key="NSSuperview" ref="938794544"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="526101747"/>
 									<string key="NSHuggingPriority">{251, 251}</string>
 									<bool key="IBUIOpaque">NO</bool>
@@ -140,7 +139,6 @@
 									<int key="NSvFlags">292</int>
 									<string key="NSFrame">{{40, 96}, {240, 240}}</string>
 									<reference key="NSSuperview" ref="938794544"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="962257170"/>
 									<string key="NSHuggingPriority">{251, 251}</string>
 									<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -155,7 +153,6 @@
 									<int key="NSvFlags">292</int>
 									<string key="NSFrame">{{98, 344}, {124, 44}}</string>
 									<reference key="NSSuperview" ref="938794544"/>
-									<reference key="NSWindow"/>
 									<bool key="IBUIOpaque">NO</bool>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIContentHorizontalAlignment">0</int>
@@ -186,8 +183,6 @@
 								</object>
 							</array>
 							<string key="NSFrame">{{0, 64}, {320, 504}}</string>
-							<reference key="NSSuperview"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="309867186"/>
 							<object class="NSColor" key="IBUIBackgroundColor">
 								<int key="NSColorSpace">2</int>
@@ -196,7 +191,6 @@
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="394667715">
-							<reference key="IBUINavigationBar"/>
 							<string key="IBUITitle"/>
 							<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="177212">
 								<string key="IBUITitle">Settings</string>
@@ -207,11 +201,9 @@
 							<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="908385922">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="IBUIButton" key="IBUICustomView" id="314792789">
-									<reference key="NSNextResponder"/>
+									<nil key="NSNextResponder"/>
 									<int key="NSvFlags">292</int>
 									<string key="NSFrame">{{244, 6}, {71, 33}}</string>
-									<reference key="NSSuperview"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="938794544"/>
 									<bool key="IBUIOpaque">NO</bool>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -250,9 +242,6 @@
 			</object>
 			<object class="IBUIViewController" id="776383769">
 				<reference key="IBUISimulatedStatusBarMetrics" ref="798001001"/>
-				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
-					<bool key="IBUIPrompted">NO</bool>
-				</object>
 				<reference key="IBUISimulatedOrientationMetrics" ref="1033823214"/>
 				<reference key="IBUISimulatedDestinationMetrics" ref="660292256"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -530,9 +519,44 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CallViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="accept:">id</string>
+						<string key="decline:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="accept:">
+							<string key="name">accept:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="decline:">
+							<string key="name">decline:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">../Classes/CallViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">CallViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="accept:">id</string>
+						<string key="decline:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="accept:">
+							<string key="name">accept:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="decline:">
+							<string key="name">decline:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">../Classes/CallViewController.m</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

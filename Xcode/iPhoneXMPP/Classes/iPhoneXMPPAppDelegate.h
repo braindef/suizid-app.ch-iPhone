@@ -3,6 +3,8 @@
 
 #import "XMPPFramework.h"
 
+#import <AVFoundation/AVFoundation.h>
+
 @class SettingsViewController;
 @class ChatViewController;
 @class CallViewController;
@@ -19,6 +21,7 @@
 	XMPPvCardAvatarModule *xmppvCardAvatarModule;
 	XMPPCapabilities *xmppCapabilities;
 	XMPPCapabilitiesCoreDataStorage *xmppCapabilitiesStorage;
+    
 	
 	NSString *password;
 	
@@ -43,6 +46,7 @@
 @property (nonatomic, strong, readonly) XMPPvCardAvatarModule *xmppvCardAvatarModule;
 @property (nonatomic, strong, readonly) XMPPCapabilities *xmppCapabilities;
 @property (nonatomic, strong, readonly) XMPPCapabilitiesCoreDataStorage *xmppCapabilitiesStorage;
+@property (nonatomic, strong) AVAudioPlayer *avSound;
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet UINavigationController *navigationController;

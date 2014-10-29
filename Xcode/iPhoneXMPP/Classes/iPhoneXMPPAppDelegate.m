@@ -572,11 +572,7 @@ if (![xmppStream isDisconnected]) {
 
 			[[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
             
-            NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ino" ofType:@"wav"]];
-            
-            SystemSoundID mRing;
-            AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &mRing);
-            AudioServicesPlaySystemSound(mRing);
+
             
 		}
         
@@ -636,6 +632,17 @@ if (![xmppStream isDisconnected]) {
             
             [Config setHelpSeeker:helpSeeker];
             
+            NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ino3" ofType:@"wav"]];
+            SystemSoundID mRing;
+            AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &mRing);
+            AudioServicesPlaySystemSound(mRing);
+            
+            //self.avSound =  [[AVAudioPlayer alloc]initWithContentsOfURL:url error:nil];
+            //[[AVAudioSession sharedInstance]setCategory:AVAudioSessionCategoryPlayback error:nil];
+            //[[AVAudioSession sharedInstance]setActive:YES error:nil];
+            //[[UIApplication sharedApplication]beginReceivingRemoteControlEvents];
+            
+            [self.avSound play];
             
             [self.navigationController presentViewController:self.callViewController animated:YES completion:NULL];
             
