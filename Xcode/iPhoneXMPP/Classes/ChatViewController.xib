@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="5100" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -24,18 +25,6 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbR-u8-3p8">
-                    <rect key="frame" x="0.0" y="18" width="320" height="44"/>
-                    <items>
-                        <navigationItem title="Chat" id="vHJ-4b-5Fn">
-                            <barButtonItem key="leftBarButtonItem" title="End" id="rh2-9v-cGW">
-                                <connections>
-                                    <action selector="endChat:" destination="-2" id="kTA-g7-evf"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpn-gO-GO7">
                     <rect key="frame" x="255" y="495" width="68" height="30"/>
                     <constraints>
@@ -49,15 +38,6 @@
                         <action selector="sendMessage:" destination="-2" eventType="touchUpInside" id="A3v-l2-khF"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Hallo" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-A0-QtK">
-                    <rect key="frame" x="0.0" y="62" width="320" height="425"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="320" id="y7V-jy-Bsj"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATs-8J-qDS">
                     <rect key="frame" x="0.0" y="496" width="244" height="30"/>
                     <constraints>
@@ -67,6 +47,15 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Hallo" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-A0-QtK">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="487"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="y7V-jy-Bsj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -75,13 +64,11 @@
                 <constraint firstItem="PN0-fJ-M6R" firstAttribute="top" secondItem="wpn-gO-GO7" secondAttribute="bottom" constant="45" id="JcL-rb-gr5"/>
                 <constraint firstItem="ATs-8J-qDS" firstAttribute="top" secondItem="Voe-A0-QtK" secondAttribute="bottom" constant="9" id="MpJ-PQ-4ys"/>
                 <constraint firstItem="wpn-gO-GO7" firstAttribute="top" secondItem="Voe-A0-QtK" secondAttribute="bottom" constant="8" id="VOP-M2-TwJ"/>
-                <constraint firstItem="Voe-A0-QtK" firstAttribute="leading" secondItem="JbR-u8-3p8" secondAttribute="leading" id="cVU-C9-ogI"/>
                 <constraint firstItem="wpn-gO-GO7" firstAttribute="leading" secondItem="ATs-8J-qDS" secondAttribute="trailing" constant="11" id="jxm-1p-2Ix"/>
-                <constraint firstItem="Voe-A0-QtK" firstAttribute="trailing" secondItem="JbR-u8-3p8" secondAttribute="trailing" id="lOh-NY-cR2"/>
-                <constraint firstItem="Voe-A0-QtK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="62" id="mzo-kl-sh1"/>
+                <constraint firstItem="Voe-A0-QtK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mzo-kl-sh1"/>
                 <constraint firstItem="PN0-fJ-M6R" firstAttribute="trailing" secondItem="wpn-gO-GO7" secondAttribute="trailing" id="nF8-CW-1M8"/>
-                <constraint firstItem="Voe-A0-QtK" firstAttribute="top" secondItem="JbR-u8-3p8" secondAttribute="bottom" id="ouB-t5-74c"/>
                 <constraint firstItem="Voe-A0-QtK" firstAttribute="leading" secondItem="ATs-8J-qDS" secondAttribute="leading" id="uCe-NQ-hZ4"/>
+                <constraint firstItem="Voe-A0-QtK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="xrY-5S-6w2"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
