@@ -46,6 +46,8 @@
 		490F24AE19FA071000D98B59 /* polar_bear_help_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 490F24AD19FA071000D98B59 /* polar_bear_help_full.png */; };
 		4910717C1A00BB3C004EAE70 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4910717B1A00BB3C004EAE70 /* AVFoundation.framework */; };
 		4910717E1A00BC65004EAE70 /* ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4910717D1A00BC65004EAE70 /* ringtone.mp3 */; };
+		491071801A00C171004EAE70 /* ino.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4910717F1A00C171004EAE70 /* ino.wav */; };
+		491071811A00C365004EAE70 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491EE82919FF359D00DB1C3E /* AudioToolbox.framework */; };
 		491EE82E19FF386B00DB1C3E /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491EE82C19FF386B00DB1C3E /* CallViewController.m */; };
 		491EE82F19FF386B00DB1C3E /* CallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491EE82D19FF386B00DB1C3E /* CallViewController.xib */; };
 		494B596319FA621C00B2157E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494B596119FA621C00B2157E /* ChatViewController.m */; };
@@ -215,6 +217,7 @@
 		490F24AD19FA071000D98B59 /* polar_bear_help_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full.png; sourceTree = "<group>"; };
 		4910717B1A00BB3C004EAE70 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4910717D1A00BC65004EAE70 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ringtone.mp3; path = Classes/ringtone.mp3; sourceTree = "<group>"; };
+		4910717F1A00C171004EAE70 /* ino.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ino.wav; path = Classes/ino.wav; sourceTree = "<group>"; };
 		491EE82919FF359D00DB1C3E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		491EE82B19FF386B00DB1C3E /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
 		491EE82C19FF386B00DB1C3E /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
@@ -421,6 +424,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491071811A00C365004EAE70 /* AudioToolbox.framework in Frameworks */,
 				4910717C1A00BB3C004EAE70 /* AVFoundation.framework in Frameworks */,
 				DC26A52D152A3E82004B71C0 /* Security.framework in Frameworks */,
 				070400B91347D09A0092A737 /* CoreLocation.framework in Frameworks */,
@@ -620,6 +624,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4910717F1A00C171004EAE70 /* ino.wav */,
 				4910717D1A00BC65004EAE70 /* ringtone.mp3 */,
 				490F24AD19FA071000D98B59 /* polar_bear_help_full.png */,
 				DC19DDA0170B4138000D2178 /* Default-568h@2x.png */,
@@ -1240,6 +1245,7 @@
 				4910717E1A00BC65004EAE70 /* ringtone.mp3 in Resources */,
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				0704FFC9134794020092A737 /* SettingsViewController.xib in Resources */,
+				491071801A00C171004EAE70 /* ino.wav in Resources */,
 				491EE82F19FF386B00DB1C3E /* CallViewController.xib in Resources */,
 				494B596419FA621C00B2157E /* ChatViewController.xib in Resources */,
 				070400451347CB140092A737 /* defaultPerson.png in Resources */,

@@ -10,6 +10,7 @@
 #import "ChatViewController.h"
 #import "iPhoneXMPPAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 @interface CallViewController ()
 
 @end
@@ -20,13 +21,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    //working
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ino" ofType:@"wav"]];
+
+    SystemSoundID mRing;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &mRing);
+    AudioServicesPlaySystemSound(mRing);
+    
+    //only working when not in background :(
     //NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ringtone" ofType:@"mp3"]];
-    //AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:nil];
-    //[audioPlayer play];
+    //self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:nil] ;
+    //self.audioPlayer.numberOfLoops = 3;
     
+    //[[AVAudioSession sharedInstance]setCategory:AVAudioSessionCategoryPlayback error: nil];
+    //[[AVAudioSession sharedInstance]setActive:YES error:nil];
+    //[[UIApplication sharedApplication]beginReceivingRemoteControlEvents];
     
-    
-    AudioServicesPlaySystemSound(self.soundFileObject);
+    //[self.audioPlayer play];
+
+
     
 }
 
