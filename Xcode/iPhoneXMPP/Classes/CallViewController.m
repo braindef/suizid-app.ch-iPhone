@@ -9,7 +9,7 @@
 #import "CallViewController.h"
 #import "ChatViewController.h"
 #import "iPhoneXMPPAppDelegate.h"
-
+#import <AVFoundation/AVFoundation.h>
 @interface CallViewController ()
 
 @end
@@ -19,6 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ringtone" ofType:@"mp3"]];
+    //AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:nil];
+    //[audioPlayer play];
+    
+    
+    
+    AudioServicesPlaySystemSound(self.soundFileObject);
+    
 }
 
 - (void)didReceiveMemoryWarning {

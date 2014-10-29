@@ -14,6 +14,7 @@
 #import "XMPPvCardCoreDataStorage.h"
 
 #import <AudioToolbox/AudioServices.h>
+#import <AVFoundation/AVAudioPlayer.h>
 #import "DDLog.h"
 #import "DDTTYLogger.h"
 
@@ -631,11 +632,7 @@ if (![xmppStream isDisconnected]) {
             
             [self.navigationController presentViewController:self.callViewController animated:YES completion:NULL];
             
-            NSString *path = [[NSBundle bundleWithIdentifier:@"com.apple.UIKit"] pathForResource:@"Tock" ofType:@"aiff"];
-            SystemSoundID soundID;
-            AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &soundID);
-            AudioServicesPlaySystemSound(soundID);
-            AudioServicesDisposeSystemSoundID(soundID);
+
             return;
             
         }
