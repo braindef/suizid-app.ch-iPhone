@@ -571,6 +571,13 @@ if (![xmppStream isDisconnected]) {
 			localNotification.alertBody = [NSString stringWithFormat:@"From: %@\n\n%@",displayName,body];
 
 			[[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
+            
+            NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ino" ofType:@"wav"]];
+            
+            SystemSoundID mRing;
+            AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &mRing);
+            AudioServicesPlaySystemSound(mRing);
+            
 		}
         
         if([body hasPrefix:@"SuicidePreventionAppServerLoginRequestAnswer"])
