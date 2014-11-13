@@ -52,6 +52,16 @@
 		494B596319FA621C00B2157E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494B596119FA621C00B2157E /* ChatViewController.m */; };
 		494B596419FA621C00B2157E /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494B596219FA621C00B2157E /* ChatViewController.xib */; };
 		494B596719FA661800B2157E /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494B596619FA661800B2157E /* RootNavigationController.m */; };
+		499F6AAE1A153DC600CC2E54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AAD1A153DC600CC2E54 /* Images.xcassets */; };
+		499F6AB81A15428000CC2E54 /* polar_bear_help_full_29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AAF1A15428000CC2E54 /* polar_bear_help_full_29x29.png */; };
+		499F6AB91A15428000CC2E54 /* polar_bear_help_full_40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AB01A15428000CC2E54 /* polar_bear_help_full_40x40.png */; };
+		499F6ABA1A15428000CC2E54 /* polar_bear_help_full_58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AB11A15428000CC2E54 /* polar_bear_help_full_58x58.png */; };
+		499F6ABB1A15428000CC2E54 /* polar_bear_help_full_76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AB21A15428000CC2E54 /* polar_bear_help_full_76x76.png */; };
+		499F6ABC1A15428000CC2E54 /* polar_bear_help_full_80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AB31A15428000CC2E54 /* polar_bear_help_full_80x80.png */; };
+		499F6ABD1A15428000CC2E54 /* polar_bear_help_full_87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AB41A15428000CC2E54 /* polar_bear_help_full_87x87.png */; };
+		499F6ABE1A15428000CC2E54 /* polar_bear_help_full_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AB51A15428000CC2E54 /* polar_bear_help_full_120x120.png */; };
+		499F6ABF1A15428000CC2E54 /* polar_bear_help_full_152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AB61A15428000CC2E54 /* polar_bear_help_full_152x152.png */; };
+		499F6AC01A15428000CC2E54 /* polar_bear_help_full_180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 499F6AB71A15428000CC2E54 /* polar_bear_help_full_180x180.png */; };
 		49A320EE19FC6A1D0077C929 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A320ED19FC6A1D0077C929 /* Config.m */; };
 		631C7B7618E0E7C70015DBDF /* XMPPSCRAMSHA1Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C7B7518E0E7C70015DBDF /* XMPPSCRAMSHA1Authentication.m */; };
 		962031FD1735831C00C43080 /* NSXMLElement+XEP_0203.m in Sources */ = {isa = PBXBuildFile; fileRef = 962031FC1735831C00C43080 /* NSXMLElement+XEP_0203.m */; };
@@ -225,6 +235,16 @@
 		494B596219FA621C00B2157E /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		494B596519FA661800B2157E /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
 		494B596619FA661800B2157E /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		499F6AAD1A153DC600CC2E54 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = SOURCE_ROOT; };
+		499F6AAF1A15428000CC2E54 /* polar_bear_help_full_29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full_29x29.png; sourceTree = "<group>"; };
+		499F6AB01A15428000CC2E54 /* polar_bear_help_full_40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full_40x40.png; sourceTree = "<group>"; };
+		499F6AB11A15428000CC2E54 /* polar_bear_help_full_58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full_58x58.png; sourceTree = "<group>"; };
+		499F6AB21A15428000CC2E54 /* polar_bear_help_full_76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full_76x76.png; sourceTree = "<group>"; };
+		499F6AB31A15428000CC2E54 /* polar_bear_help_full_80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full_80x80.png; sourceTree = "<group>"; };
+		499F6AB41A15428000CC2E54 /* polar_bear_help_full_87x87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full_87x87.png; sourceTree = "<group>"; };
+		499F6AB51A15428000CC2E54 /* polar_bear_help_full_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full_120x120.png; sourceTree = "<group>"; };
+		499F6AB61A15428000CC2E54 /* polar_bear_help_full_152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full_152x152.png; sourceTree = "<group>"; };
+		499F6AB71A15428000CC2E54 /* polar_bear_help_full_180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bear_help_full_180x180.png; sourceTree = "<group>"; };
 		49A320EC19FC6A1D0077C929 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		49A320ED19FC6A1D0077C929 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		631C7B7418E0E7C70015DBDF /* XMPPSCRAMSHA1Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPSCRAMSHA1Authentication.h; sourceTree = "<group>"; };
@@ -600,6 +620,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				499F6AAD1A153DC600CC2E54 /* Images.xcassets */,
 				DC1F98001152CAF300138A8F /* XMPP */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -622,6 +643,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				499F6AAF1A15428000CC2E54 /* polar_bear_help_full_29x29.png */,
+				499F6AB01A15428000CC2E54 /* polar_bear_help_full_40x40.png */,
+				499F6AB11A15428000CC2E54 /* polar_bear_help_full_58x58.png */,
+				499F6AB21A15428000CC2E54 /* polar_bear_help_full_76x76.png */,
+				499F6AB31A15428000CC2E54 /* polar_bear_help_full_80x80.png */,
+				499F6AB41A15428000CC2E54 /* polar_bear_help_full_87x87.png */,
+				499F6AB51A15428000CC2E54 /* polar_bear_help_full_120x120.png */,
+				499F6AB61A15428000CC2E54 /* polar_bear_help_full_152x152.png */,
+				499F6AB71A15428000CC2E54 /* polar_bear_help_full_180x180.png */,
 				490F24AD19FA071000D98B59 /* polar_bear_help_full.png */,
 				490F2CCB1A00DC9800962379 /* ino3.wav */,
 				DC19DDA0170B4138000D2178 /* Default-568h@2x.png */,
@@ -1239,14 +1269,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499F6AC01A15428000CC2E54 /* polar_bear_help_full_180x180.png in Resources */,
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				499F6AB91A15428000CC2E54 /* polar_bear_help_full_40x40.png in Resources */,
+				499F6AAE1A153DC600CC2E54 /* Images.xcassets in Resources */,
 				0704FFC9134794020092A737 /* SettingsViewController.xib in Resources */,
 				491EE82F19FF386B00DB1C3E /* CallViewController.xib in Resources */,
 				494B596419FA621C00B2157E /* ChatViewController.xib in Resources */,
+				499F6ABE1A15428000CC2E54 /* polar_bear_help_full_120x120.png in Resources */,
 				070400451347CB140092A737 /* defaultPerson.png in Resources */,
+				499F6ABD1A15428000CC2E54 /* polar_bear_help_full_87x87.png in Resources */,
+				499F6ABB1A15428000CC2E54 /* polar_bear_help_full_76x76.png in Resources */,
 				DC90AC6D147C28850022DF52 /* README.txt in Resources */,
+				499F6AB81A15428000CC2E54 /* polar_bear_help_full_29x29.png in Resources */,
 				490F2CCC1A00DC9800962379 /* ino3.wav in Resources */,
+				499F6ABA1A15428000CC2E54 /* polar_bear_help_full_58x58.png in Resources */,
+				499F6ABF1A15428000CC2E54 /* polar_bear_help_full_152x152.png in Resources */,
 				490F24AE19FA071000D98B59 /* polar_bear_help_full.png in Resources */,
+				499F6ABC1A15428000CC2E54 /* polar_bear_help_full_80x80.png in Resources */,
 				DC19DDA1170B4138000D2178 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

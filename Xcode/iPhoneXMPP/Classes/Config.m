@@ -13,15 +13,15 @@
 
 }
 
-static NSString *servername=@"ns3.ignored.ch";
+static NSString *servername=@"suizid-ap.ch";
 
 static NSString *username=nil;
 static NSString *password=nil;
 
-static NSString *managementUser=@"management@ns3.ignored.ch";
+static NSString *managementUser=@"management@suizid-app.ch";
 static NSString *managementPassword=@"password";
 
-static NSString *serverBotJid=@"server@ns3.ignored.ch";
+static NSString *serverBotJid=@"server@suizid-app.ch";
 
 static NSString *supporter = nil;
 static NSString *helpSeeker = nil;
